@@ -300,6 +300,83 @@
     backdrop-filter: blur(10px);
   }
 
+  /* Special effects for "Ours" badges */
+  .indicator-ours {
+    background: linear-gradient(45deg, #4CAF50, #66BB6A, #81C784, #4CAF50) !important;
+    background-size: 300% 300%;
+    animation: gradient-shift 3s ease infinite, glow-pulse 2s ease-in-out infinite;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    padding: 8px 18px !important;
+    box-shadow:
+      0 0 20px rgba(76, 175, 80, 0.6),
+      0 0 40px rgba(76, 175, 80, 0.3),
+      inset 0 0 10px rgba(255, 255, 255, 0.2) !important;
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    position: relative;
+    overflow: hidden;
+    transform: scale(1.1);
+    z-index: 10;
+  }
+
+  .indicator-ours::before {
+    content: '⭐';
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: star-spin 3s linear infinite;
+    font-size: 0.8rem;
+  }
+
+  .indicator-ours::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 70%
+    );
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow:
+        0 0 20px rgba(76, 175, 80, 0.6),
+        0 0 40px rgba(76, 175, 80, 0.3),
+        inset 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+      box-shadow:
+        0 0 30px rgba(76, 175, 80, 0.9),
+        0 0 60px rgba(76, 175, 80, 0.6),
+        inset 0 0 15px rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  @keyframes star-spin {
+    from { transform: translateY(-50%) rotate(0deg); }
+    to { transform: translateY(-50%) rotate(360deg); }
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+  }
+
   .indicator-left {
     background: rgba(250, 112, 154, 0.9);
     color: white;
@@ -419,7 +496,7 @@
           <div class="video-wrapper">
             <div class="comparison-indicator">
               <span class="indicator-badge indicator-left">Skyreel-A2</span>
-              <span class="indicator-badge indicator-right">Ours</span>
+              <span class="indicator-badge indicator-right indicator-ours">Ours</span>
             </div>
             <video autoplay muted loop controls style="width: 100%; height: auto;">
               <source src="./src/videos/multi_comparison/pair_1_bean_tom_comparison.mp4" type="video/mp4">
@@ -433,7 +510,7 @@
           <div class="video-wrapper">
             <div class="comparison-indicator">
               <span class="indicator-badge indicator-left">Skyreel-A2</span>
-              <span class="indicator-badge indicator-right">Ours</span>
+              <span class="indicator-badge indicator-right indicator-ours">Ours</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
               <source src="./src/videos/multi_comparison/pair_2_fishing_comparison.mp4" type="video/mp4">
@@ -447,7 +524,7 @@
           <div class="video-wrapper">
             <div class="comparison-indicator">
               <span class="indicator-badge indicator-left">Skyreel-A2</span>
-              <span class="indicator-badge indicator-right">Ours</span>
+              <span class="indicator-badge indicator-right indicator-ours">Ours</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
               <source src="./src/videos/multi_comparison/pair_3_bakery_comparison.mp4" type="video/mp4">
@@ -461,7 +538,7 @@
           <div class="video-wrapper">
             <div class="comparison-indicator">
               <span class="indicator-badge indicator-left">Skyreel-A2</span>
-              <span class="indicator-badge indicator-right">Ours</span>
+              <span class="indicator-badge indicator-right indicator-ours">Ours</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
               <source src="./src/videos/multi_comparison/pair_4_tea_party_comparison.mp4" type="video/mp4">
@@ -475,7 +552,7 @@
           <div class="video-wrapper">
             <div class="comparison-indicator">
               <span class="indicator-badge indicator-left">Skyreel-A2</span>
-              <span class="indicator-badge indicator-right">Ours</span>
+              <span class="indicator-badge indicator-right indicator-ours">Ours</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
               <source src="./src/videos/multi_comparison/pair_5_aquarium_comparison.mp4" type="video/mp4">
@@ -489,7 +566,7 @@
           <div class="video-wrapper">
             <div class="comparison-indicator">
               <span class="indicator-badge indicator-left">Skyreel-A2</span>
-              <span class="indicator-badge indicator-right">Ours</span>
+              <span class="indicator-badge indicator-right indicator-ours">Ours</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
               <source src="./src/videos/multi_comparison/pair_6_tech_startup_comparison.mp4" type="video/mp4">
@@ -503,7 +580,7 @@
           <div class="video-wrapper">
             <div class="comparison-indicator">
               <span class="indicator-badge indicator-left">Skyreel-A2</span>
-              <span class="indicator-badge indicator-right">Ours</span>
+              <span class="indicator-badge indicator-right indicator-ours">Ours</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
               <source src="./src/videos/multi_comparison/pair_7_mall_security_comparison.mp4" type="video/mp4">
@@ -689,7 +766,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video autoplay muted loop controls style="width: 100%; height: auto;">
@@ -708,7 +785,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -727,7 +804,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -746,7 +823,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -765,7 +842,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -784,7 +861,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -803,7 +880,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -822,7 +899,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -841,7 +918,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -860,7 +937,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -879,7 +956,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -898,7 +975,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -917,7 +994,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -936,7 +1013,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -955,7 +1032,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -974,7 +1051,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -993,7 +1070,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <span class="indicator-badge" style="background: rgba(255, 193, 7, 0.9); color: white;">Wan-I2V</span>
             </div>
             <div class="comparison-indicator" style="top: auto; bottom: 15px;">
-              <span class="indicator-badge" style="background: rgba(76, 175, 80, 0.9); color: white;">Ours</span>
+              <span class="indicator-badge indicator-ours">Ours</span>
               <span class="indicator-badge" style="background: rgba(250, 112, 154, 0.9); color: white;">Skyreel</span>
             </div>
             <video muted loop controls style="width: 100%; height: auto;">
@@ -1050,13 +1127,13 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="display: flex; gap: 20px; justify-content: center;">
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video autoplay muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/[character:_Ice_Bear]_silently_carves_wood_at_a_wo_20250924_152930.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/01.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video autoplay muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/[character:_Mr._Bean]_builds_a_small_robot._[chara_20250921_203614.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/02.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -1068,13 +1145,13 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="display: flex; gap: 20px; justify-content: center;">
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/[character:_Mr._Bean]_orders_coffee._[character:_P_20250921_220647.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/03.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/[character:_Mr._Bean]_orders_coffee._[character:_P_20250921_230542.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/04.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -1086,13 +1163,13 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="display: flex; gap: 20px; justify-content: center;">
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/[character:_Mr._Bean]_rides_a_unicycle._[character_20250921_223931.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/05.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/Grizzly_and_Mr._Bean_go_camping,_but_Jerry_keeps_s_20250912_180907.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/06.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -1104,13 +1181,13 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="display: flex; gap: 20px; justify-content: center;">
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/Grizzly,_Ice_Bear,_and_Panda_invite_Young_Sheldon__20250912_172452.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/07.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/Ice_Bear_calmly_paints_a_picture_of_Jerry,_while_T.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/08.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -1122,13 +1199,13 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="display: flex; gap: 20px; justify-content: center;">
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/Ice_Bear,_Tom,_and_George_Cooper_join_a_cooking_co_20250923_062751.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/09.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/Mr._Bean_cooks_noodles._panda.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/10.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -1140,13 +1217,13 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="display: flex; gap: 20px; justify-content: center;">
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/Mr._Bean_dresses_as_a_magician,_trying_to_impress__20250912_174819.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/11.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/Panda_teaches_Young_Sheldon_about_cartoons,_while__20250915_195207.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/12.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -1158,13 +1235,13 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="display: flex; gap: 20px; justify-content: center;">
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/Tom_chases_Jerry_into_a_library,_where_Young_Sheld_20250912_174516.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/13.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/Tom_hides_in_Mr_Beans_closet_but_when_Jerry_joi.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/14.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -1176,25 +1253,49 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="display: flex; gap: 20px; justify-content: center;">
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/Tom_sneaks_into_Mr._Bean's_apartment,_only_to_find_20250912_172422.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/15.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/Young_Sheldon_judges_a_spelling_bee,_but_Panda_spe.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/16.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
           </div>
         </div>
 
-        <!-- Slide 9 - 1 video (last odd one) -->
+        <!-- Slide 9 - 2 videos -->
         <div class="carousel-slide">
           <div style="display: flex; gap: 20px; justify-content: center;">
             <div class="video-wrapper" style="flex: 1; max-width: 700px;">
               <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/Young_Sheldon_visits_Mr._Bean's_car,_shocked_at_it_20250912_174557.mp4" type="video/mp4">
+                <source src="./src/videos/more_results/17.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
+              <video muted loop controls style="width: 100%; height: auto;">
+                <source src="./src/videos/more_results/18.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 10 - 2 videos -->
+        <div class="carousel-slide">
+          <div style="display: flex; gap: 20px; justify-content: center;">
+            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
+              <video muted loop controls style="width: 100%; height: auto;">
+                <source src="./src/videos/more_results/19.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
+              <video muted loop controls style="width: 100%; height: auto;">
+                <source src="./src/videos/more_results/20.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -1215,6 +1316,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="carousel-dot" onclick="goToSlide('moreResults', 6)"></span>
           <span class="carousel-dot" onclick="goToSlide('moreResults', 7)"></span>
           <span class="carousel-dot" onclick="goToSlide('moreResults', 8)"></span>
+          <span class="carousel-dot" onclick="goToSlide('moreResults', 9)"></span>
         </div>
         <button class="carousel-btn" onclick="nextSlide('moreResults')">›</button>
       </div>
