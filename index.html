@@ -99,13 +99,33 @@
   Imagine Mr. Bean stepping into the cartoon Tom and Jerry—can we generate videos where our favorite characters interact naturally in new contexts?
   Motivated by this question, we study inter-character interaction in text-to-video generation, aiming to synthesize natural interactions while preserving individual identity and behaviors.
   This task introduces two main challenges. 
-  First, the characters may have never coexisted, making it difficult to generate faithful and coherent interactions. 
-  Second, combining different styled characters often leads to undesirable style shifts—for example, realistic characters appearing cartoonish—a failure mode we refer to as **style delusion**. This phenomenon arises because training videos typically belong to a single, homogeneous style. 
+  First, the characters may have <strong>never coexisted</strong>, making it difficult to generate faithful and coherent interactions. 
+  Second, combining different styled characters often leads to undesirable style shifts—for example, realistic characters appearing cartoonish—a failure mode we refer to as <strong>style delusion</strong>. This phenomenon arises because training videos typically belong to a single, homogeneous style. 
   To address these challenges, we study how disentangling character identity and visual style influences the quality of character mixing and interaction synthesis in generated videos.
   For character disentanglement, we examine how captioning strategies affect the model’s ability to learn and ground each character as a distinct concept.
-  For style disentanglement, \yi{we introduce augmented data and  analyze how varying their amount} 
-  impacts the mitigation of style delusion, while ensuring that overall video quality is not degraded.  
-  Extensive experiments demonstrate that our method outperforms state-of-the-art approaches across multiple aspects, including identity preservation, personalized motion preservation, style preservation, interaction plausibility, and video quality. </div>
+  For style disentanglement, we introduce augmented data and  analyze how varying their amount impacts the mitigation of style delusion, while ensuring that overall video quality is not degraded.  
+  Extensive experiments demonstrate that our method outperforms state-of-the-art approaches across multiple aspects, including identity preservation, personalized motion preservation, style preservation, interaction plausibility, and video quality.
+
+  <div style="margin: 30px auto; max-width: 1200px;">
+    <h4 style="text-align: center; color: #667eea; margin-bottom: 20px;">Style Delusion Examples</h4>
+    <div style="display: flex; gap: 20px; justify-content: center;">
+      <div class="video-wrapper" style="flex: 1; max-width: 500px;">
+        <video autoplay muted loop controls style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+          <source src="./src/videos/style_delusion_examples/Mr._Bean_sits_on_the_couch._Jerry_peeks_from_a_cus.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p style="text-align: center; margin-top: 10px; color: #666; font-size: 0.9rem;">Mr. Bean appears cartoonish.</p>
+      </div>
+      <div class="video-wrapper" style="flex: 1; max-width: 500px;">
+        <video autoplay muted loop controls style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+          <source src="./src/videos/style_delusion_examples/Mr._Bean_tries_to_secretly_pra.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p style="text-align: center; margin-top: 10px; color: #666; font-size: 0.9rem;">Ice Bear appears realistic</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <!------------- Method Overview ------------------>
