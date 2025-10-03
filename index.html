@@ -17,7 +17,34 @@
 </head>
 
 <!-- Author -->
-<body>
+<body class="hero-active">
+
+
+<!-- Hero Video Background -->
+<div class="hero-video-container" id="heroVideo">
+  <video autoplay muted loop playsinline class="hero-video active" id="heroVideoPlayer1">
+    <source src="./src/videos/more_results/09.mp4" type="video/mp4">
+  </video>
+  <video autoplay muted loop playsinline class="hero-video" id="heroVideoPlayer2">
+    <source src="./src/videos/more_results/04.mp4" type="video/mp4">
+  </video>
+  <video autoplay muted loop playsinline class="hero-video" id="heroVideoPlayer3">
+    <source src="./src/videos/more_results/08.mp4" type="video/mp4">
+  </video>
+  <video autoplay muted loop playsinline class="hero-video" id="heroVideoPlayer4">
+    <source src="./src/videos/more_results/06.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay">
+    <div class="video-nav-dots" id="videoNavDots">
+      <div class="video-nav-dot active" data-video="0"></div>
+      <div class="video-nav-dot" data-video="1"></div>
+      <div class="video-nav-dot" data-video="2"></div>
+      <div class="video-nav-dot" data-video="3"></div>
+    </div>
+    <div class="scroll-indicator">Scroll Down</div>
+  </div>
+</div>
+
 <div class="header-content">
   <!-- Decorative elements -->
   <div class="header-decoration top-left"></div>
@@ -38,8 +65,8 @@
   <!-- <div class="conference-top"></div> -->
 
   <!-- Modern authors section with better spacing -->
-  <div class="authors-modern-container">
-    <div class="authors-modern-row">
+  <!-- <div class="authors-modern-container"> -->
+    <!-- <div class="authors-modern-row">
       <a href="#" class="author-modern-link">
         <span class="author-name-modern">First Author</span><sup class="affiliation-sup">1</sup>
       </a>
@@ -56,22 +83,22 @@
         <span class="author-name-modern">Senior Author</span><sup class="affiliation-sup">1,3*</sup>
       </a>
     </div>
-  </div>
+  </div> -->
 
   <!-- Modern institutions display -->
   <div class="institutions-modern">
     <div class="institution-item-modern">
-      <span class="institution-number-modern"><sup>1</sup></span>
-      <span class="institution-name-modern">Your University</span>
+      <span class="institution-number-modern"></span>
+      <span class="institution-name-modern">Anonymous Authors</span>
     </div>
-    <div class="institution-item-modern">
+    <!-- <div class="institution-item-modern">
       <span class="institution-number-modern"><sup>2</sup></span>
       <span class="institution-name-modern">Collaborator University</span>
     </div>
     <div class="institution-item-modern">
       <span class="institution-number-modern"><sup>3</sup></span>
       <span class="institution-name-modern">Research Lab</span>
-    </div>
+    </div> -->
   </div>
 
   <!-- Modern buttons section -->
@@ -95,7 +122,7 @@
 <!------------- Abstract ------------------>
 
 <div class="content">
-  <h2 style="text-align:center"><strong>Abstract</strong></h2>
+  <h2 style="text-align:center">Abstract</h2>
   Imagine Mr. Bean stepping into the cartoon Tom and Jerry—can we generate videos where our favorite characters interact naturally in new contexts?
   Motivated by this question, we study inter-character interaction in text-to-video generation, aiming to synthesize natural interactions while preserving individual identity and behaviors.
   This task introduces two main challenges. 
@@ -128,13 +155,161 @@
 </div>
 
 
-<!------------- Method Overview ------------------>
-<!-- <div class="content">
-  <h2 style="text-align:center"><strong>Method Overview</strong></h2>
-  <img src="./src/img/method_pipeline.png" alt="Method Pipeline" style="display: block; margin: 0 auto; width: 100%; max-width: 800px;">
-  <p style="text-align: center; margin-top: 15px; font-style: italic; color: #666;">
-    ss
-</div> -->
+<!------------- More Results ------------------>
+<div class="content more-results-section">
+  <h2 class="fancy-title">More Results</h2>
+
+  <style>
+    .more-results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .more-results-grid .video-wrapper {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .more-results-grid .video-wrapper:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .more-results-grid .video-wrapper video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 1400px) {
+      .more-results-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .more-results-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .more-results-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="more-results-grid">
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/01.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/02.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/03.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/04.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/05.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/06.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/07.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/08.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/09.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/10.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/11.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/12.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/13.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/14.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/15.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/16.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/17.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/18.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/19.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/more_results/20.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
 
 <style>
   .multi-char-section, .single-char-section, .more-results-section {
@@ -307,8 +482,8 @@
     animation: gradient-shift 3s ease infinite, glow-pulse 2s ease-in-out infinite;
     color: white !important;
     font-weight: 700 !important;
-    font-size: 0.9rem !important;
-    padding: 8px 18px !important;
+    font-size: 0.85rem !important;
+    padding: 6px 15px 6px 26px !important;
     box-shadow:
       0 0 20px rgba(76, 175, 80, 0.6),
       0 0 40px rgba(76, 175, 80, 0.3),
@@ -316,18 +491,18 @@
     border: 2px solid rgba(255, 255, 255, 0.5) !important;
     position: relative;
     overflow: hidden;
-    transform: scale(1.1);
+    transform: scale(1);
     z-index: 10;
   }
 
   .indicator-ours::before {
     content: '⭐';
     position: absolute;
-    left: 5px;
+    left: 6px;
     top: 50%;
     transform: translateY(-50%);
     animation: star-spin 3s linear infinite;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .indicator-ours::after {
@@ -473,10 +648,6 @@
 
 <div class="content multi-char-section">
   <h2 class="fancy-title">Multi-character Comparison</h2>
-
-  <p style="text-align:center; font-size: 1.1rem; color: #4a5568; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-    Experience the power of character mixing as diverse personalities interact naturally in unprecedented scenarios
-  </p>
 
   <!-- <div class="method-badges">
     <div class="method-badge method-baseline"> 
@@ -748,10 +919,6 @@ document.addEventListener('DOMContentLoaded', () => {
 <!------------- Single Character Results ------------------>
 <div class="content single-char-section">
   <h2 class="fancy-title">Single-character Comparison</h2>
-
-  <p style="text-align:center; font-size: 1.1rem; color: #4a5568; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-    Comparing our method against state-of-the-art approaches in single-character video generation
-  </p>
 
   <div class="video-carousel">
     <div class="carousel-container">
@@ -1109,226 +1276,9 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 </div>
 
-
-<!------------- More Results ------------------>
-<div class="content more-results-section">
-  <h2 class="fancy-title">More Results</h2>
-
-  <p style="text-align:center; font-size: 1.1rem; color: #4a5568; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-    Additional examples showcasing diverse character interactions and scenarios
-  </p>
-
-  <div class="video-carousel" style="max-width: 1600px; margin: 0 auto;">
-    <div class="carousel-container">
-      <div class="carousel-progress" id="moreResultsProgress"></div>
-      <div class="carousel-slides" id="moreResultsSlides">
-        <!-- Slide 1 - 2 videos -->
-        <div class="carousel-slide active">
-          <div style="display: flex; gap: 20px; justify-content: center;">
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video autoplay muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/01.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video autoplay muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/02.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 2 - 2 videos -->
-        <div class="carousel-slide">
-          <div style="display: flex; gap: 20px; justify-content: center;">
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/03.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/04.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 - 2 videos -->
-        <div class="carousel-slide">
-          <div style="display: flex; gap: 20px; justify-content: center;">
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/05.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/06.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 4 - 2 videos -->
-        <div class="carousel-slide">
-          <div style="display: flex; gap: 20px; justify-content: center;">
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/07.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/08.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 5 - 2 videos -->
-        <div class="carousel-slide">
-          <div style="display: flex; gap: 20px; justify-content: center;">
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/09.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/10.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 6 - 2 videos -->
-        <div class="carousel-slide">
-          <div style="display: flex; gap: 20px; justify-content: center;">
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/11.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/12.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 7 - 2 videos -->
-        <div class="carousel-slide">
-          <div style="display: flex; gap: 20px; justify-content: center;">
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/13.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/14.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 8 - 2 videos -->
-        <div class="carousel-slide">
-          <div style="display: flex; gap: 20px; justify-content: center;">
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/15.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/16.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 9 - 2 videos -->
-        <div class="carousel-slide">
-          <div style="display: flex; gap: 20px; justify-content: center;">
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/17.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/18.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 10 - 2 videos -->
-        <div class="carousel-slide">
-          <div style="display: flex; gap: 20px; justify-content: center;">
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/19.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="video-wrapper" style="flex: 1; max-width: 700px;">
-              <video muted loop controls style="width: 100%; height: auto;">
-                <source src="./src/videos/more_results/20.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carousel Controls -->
-      <div class="carousel-controls">
-        <button class="carousel-btn" onclick="prevSlide('moreResults')">‹</button>
-        <div class="carousel-dots" id="moreResultsDots">
-          <span class="carousel-dot active" onclick="goToSlide('moreResults', 0)"></span>
-          <span class="carousel-dot" onclick="goToSlide('moreResults', 1)"></span>
-          <span class="carousel-dot" onclick="goToSlide('moreResults', 2)"></span>
-          <span class="carousel-dot" onclick="goToSlide('moreResults', 3)"></span>
-          <span class="carousel-dot" onclick="goToSlide('moreResults', 4)"></span>
-          <span class="carousel-dot" onclick="goToSlide('moreResults', 5)"></span>
-          <span class="carousel-dot" onclick="goToSlide('moreResults', 6)"></span>
-          <span class="carousel-dot" onclick="goToSlide('moreResults', 7)"></span>
-          <span class="carousel-dot" onclick="goToSlide('moreResults', 8)"></span>
-          <span class="carousel-dot" onclick="goToSlide('moreResults', 9)"></span>
-        </div>
-        <button class="carousel-btn" onclick="nextSlide('moreResults')">›</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 <!------------- Citation ------------------>
 <div class="content">
-  <h2 style="text-align:center"><strong>Citation</strong></h2>
+  <h2 style="text-align:center">Citation</h2>
   <div style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #667eea; margin: 20px 0;">
     <pre style="background: none; padding: 0; margin: 0; font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace; font-size: 14px; color: #2d3748;">@article{mimix2025,
   title={CHARACTER MIXING FOR VIDEO GENERATION},
@@ -1339,8 +1289,147 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 </div>
 
- 
- 
+<script>
+// Hero video scroll behavior with rotation
+document.addEventListener('DOMContentLoaded', () => {
+  const heroVideo = document.getElementById('heroVideo');
+  const body = document.body;
+  const videoPlayers = [
+    document.getElementById('heroVideoPlayer1'),
+    document.getElementById('heroVideoPlayer2'),
+    document.getElementById('heroVideoPlayer3'),
+    document.getElementById('heroVideoPlayer4')
+  ];
+  const navDots = document.querySelectorAll('.video-nav-dot');
+
+  let hasScrolled = false;
+  let currentVideoIndex = 0;
+  let videoRotationInterval;
+  let isAutoRotating = true;
+
+  // Start all videos playing
+  videoPlayers.forEach(video => {
+    video.play().catch(e => console.log('Video autoplay failed:', e));
+  });
+
+  // Update active dot
+  const updateActiveDot = (index) => {
+    navDots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  };
+
+  // Switch to specific video
+  const switchToVideo = (index) => {
+    const currentVideo = videoPlayers[currentVideoIndex];
+    const nextVideo = videoPlayers[index];
+
+    // Fade out current, fade in next
+    currentVideo.classList.remove('active');
+    nextVideo.classList.add('active');
+
+    currentVideoIndex = index;
+    updateActiveDot(index);
+  };
+
+  // Rotate videos with crossfade effect
+  const rotateVideos = () => {
+    const nextIndex = (currentVideoIndex + 1) % videoPlayers.length;
+    switchToVideo(nextIndex);
+  };
+
+  // Start video rotation every 5 seconds
+  const startAutoRotation = () => {
+    videoRotationInterval = setInterval(rotateVideos, 5000);
+    isAutoRotating = true;
+  };
+
+  const stopAutoRotation = () => {
+    if (videoRotationInterval) {
+      clearInterval(videoRotationInterval);
+      videoRotationInterval = null;
+    }
+    isAutoRotating = false;
+  };
+
+  // Add click handlers to navigation dots
+  navDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      stopAutoRotation();
+      switchToVideo(index);
+      // Resume auto-rotation after 10 seconds of inactivity
+      setTimeout(() => {
+        if (!hasScrolled && !isAutoRotating) {
+          startAutoRotation();
+        }
+      }, 10000);
+    });
+  });
+
+  // Start initial rotation
+  startAutoRotation();
+
+  // Handle scroll event
+  const handleScroll = () => {
+    if (!hasScrolled && (window.scrollY > 50 || document.documentElement.scrollTop > 50)) {
+      hasScrolled = true;
+      clearInterval(videoRotationInterval);
+      heroVideo.classList.add('hidden');
+      body.classList.remove('hero-active');
+    }
+  };
+
+  // Handle wheel event
+  const handleWheel = (e) => {
+    if (!hasScrolled && e.deltaY > 0) {
+      hasScrolled = true;
+      clearInterval(videoRotationInterval);
+      heroVideo.classList.add('hidden');
+      body.classList.remove('hero-active');
+      // Smooth scroll to content
+      window.scrollTo({
+        top: 100,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Handle touch events for mobile
+  let touchStartY = 0;
+  const handleTouchStart = (e) => {
+    touchStartY = e.touches[0].clientY;
+  };
+
+  const handleTouchMove = (e) => {
+    if (!hasScrolled) {
+      const touchEndY = e.touches[0].clientY;
+      const deltaY = touchStartY - touchEndY;
+
+      if (deltaY > 50) { // Swipe up threshold
+        hasScrolled = true;
+        clearInterval(videoRotationInterval);
+        heroVideo.classList.add('hidden');
+        body.classList.remove('hero-active');
+        window.scrollTo({
+          top: 100,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
+  // Add event listeners
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('wheel', handleWheel, { passive: true });
+  window.addEventListener('touchstart', handleTouchStart, { passive: true });
+  window.addEventListener('touchmove', handleTouchMove, { passive: true });
+
+});
+</script>
 
 </body>
 </html>
